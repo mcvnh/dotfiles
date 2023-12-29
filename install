@@ -16,6 +16,10 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 # Tmux
 ln -sf $DOTFILES/tmux/tmux.conf $HOME/.tmux.conf
 
+# Git
+ln -sf $DOTFILES/git/gitconfig $HOME/.gitconfig
+ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
+
 # Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
