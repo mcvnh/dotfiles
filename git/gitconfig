@@ -88,3 +88,6 @@
     rebase = false
 [init]
     defaultBranch = main
+[user]
+	name = Anh Mac
+	email = git@macanh.com

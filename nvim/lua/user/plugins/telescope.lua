@@ -36,7 +36,7 @@ return {
             ['<C-Up>'] = actions.cycle_history_prev,
           },
         },
-        file_ignore_patterns = { '.git/' },
+        file_ignore_patterns = { '.git/', 'node_modules' },
       },
       extensions = {
         live_grep_args = {

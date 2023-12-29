@@ -1,0 +1,13 @@
+@fsouza/prettierd
+@tailwindcss/language-server
+@vue/language-service
+@shopify/cli
+@shopify/theme
+bash-language-server
+eslint_d
+intelephense
+npm-check-updates
+tree-sitter-cli
+typescript
+vscode-langservers-extracted
+emmet-ls
