@@ -36,7 +36,9 @@ export KEYTIMEOUT=15
 
 typeset -U path cdpath fpath
 path=(
+    $HOME/.cargo/bin
     $HOME/.local/bin
+    $HOME/.local/share/bob/nvim-bin
     $path
 )
 
@@ -73,7 +75,13 @@ unsetopt sharehistory
 alias vim="nvim"
 alias copy="xclip -selection clipboard"
 alias paste="xclip -o -selection clipboard"
-alias cat="bat"
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    alias cat="cat"
+else
+    alias cat="batcat"
+fi
+
 alias webcam="gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video2"
 alias sail='[ -f sail ] && sail || vendor/bin/sail'
 
