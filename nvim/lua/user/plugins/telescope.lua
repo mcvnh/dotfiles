@@ -20,7 +20,7 @@ return {
     require('telescope').setup({
       defaults = {
         path_display = { truncate = 1 },
-        prompt_prefix = '   ',
+        prompt_prefix = '   ',
         selection_caret = '  ',
         layout_config = {
           prompt_position = 'top',
@@ -36,7 +36,16 @@ return {
             ['<C-Up>'] = actions.cycle_history_prev,
           },
         },
-        file_ignore_patterns = { '.git/', 'node_modules' },
+        file_ignore_patterns = { 
+          '.git/',
+          'node_modules/',
+          'vendor/',
+          'build/',
+          'dist/',
+          'target/',
+          'package-lock.json',
+          'yarn.lock',
+        },
       },
       extensions = {
         live_grep_args = {
