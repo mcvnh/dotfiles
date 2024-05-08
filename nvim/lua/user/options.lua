@@ -1,9 +1,9 @@
 vim.g.skip_ts_context_commentstring_module = true
 vim.opt.cmdheight = 0
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 vim.opt.encoding = 'utf-8'
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.number = true

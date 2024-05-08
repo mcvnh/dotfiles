@@ -19,6 +19,9 @@ require("lazy").setup({
   -- Commenting support.
   { import = 'user.plugins.vim-commentary' },
 
+  -- Prettier
+  { import = 'user.plugins.prettier' },
+
   -- Add, change, and delete surrounding text.
   { 'tpope/vim-surround' },
 
