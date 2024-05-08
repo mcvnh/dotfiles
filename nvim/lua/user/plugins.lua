@@ -22,6 +22,9 @@ require("lazy").setup({
   -- Prettier
   { import = 'user.plugins.prettier' },
 
+  -- Trailing white space
+  { import = 'user.plugins.trailing-spaces'},
+
   -- Add, change, and delete surrounding text.
   { 'tpope/vim-surround' },
 
