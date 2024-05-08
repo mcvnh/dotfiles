@@ -25,6 +25,9 @@ require("lazy").setup({
   -- Trailing white space
   { import = 'user.plugins.trailing-spaces'},
 
+  -- Outline
+  { import = 'user.plugins.outline' },
+
   -- Add, change, and delete surrounding text.
   { 'tpope/vim-surround' },
 
