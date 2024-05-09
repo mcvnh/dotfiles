@@ -24,6 +24,10 @@ ln -sf $DOTFILES/git/gitignore_global $HOME/.gitignore_global
 mkdir -p $HOME/.nvm
 ln -sf $DOTFILES/nvm/default-packages $HOME/.nvm/default-packages
 
+# Projects
+mkdir -p $HOME/.projects
+ls -sf $DOTFILES/projects/* $HOME/.projects
+
 # Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

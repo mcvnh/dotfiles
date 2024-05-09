@@ -1,0 +1,35 @@
+#!/bin/sh
+# A bootstrap point to start a new tmux session for a 3js project
+
+PROJECTS_DIR="[YOUR_PROJECTS_DIR]"
+COMMAND=$1
+
+if [ $# -eq 0 ]; then
+  echo "Usage: $0 <project-name>"
+  echo "       $0 --list"
+  exit 1
+fi
+
+if [ $COMMAND == "--list" ]; then
+  ls -l "$PROJECTS_DIR" | grep "^d"
+else
+  PROJECT_NAME=$COMMAND
+  PROJECT_PATH="$PROJECTS_DIR/$PROJECT_NAME"
+
+  if [ ! -d "$PROJECT_PATH" ]; then
+    echo "Project $PROJECT_NAME not found"
+    exit 1
+  fi
+
+  SESSION_NAME="THREEJS-$PROJECT_NAME"
+
+  tmux has-session -t $SESSION_NAME 2>/dev/null
+
+  if [ $? != 0 ]; then
+    tmux new-session -s $SESSION_NAME -c "$PROJECT_PATH" -n "IDE" -d "nvim"
+    tmux new-window -t $SESSION_NAME:2 -n "SERVER" -c "$PROJECT_PATH" -d "npm install && npm run dev; /bin/zsh -i"
+    tmux new-window -t $SESSION_NAME:3 -n "TERMINAL" -c "$PROJECT_PATH" -d "/bin/zsh -i"
+  fi
+
+  tmux -2 attach-session -t $SESSION_NAME
+fi
